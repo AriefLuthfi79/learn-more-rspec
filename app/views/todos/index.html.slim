@@ -1,0 +1,8 @@
+h1
+  | Todos
+
+= link_to "Add a new todo", new_todo_path 
+
+ul.todos
+  - @todos.each do |f|
+    li = f.title
