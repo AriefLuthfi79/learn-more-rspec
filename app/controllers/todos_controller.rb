@@ -1,15 +1,16 @@
 class TodosController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
   end
 
   def new
-    @todo = Todo.new
+    @todo = current_user.todos.new
   end
 
   def create
-    Todo.create(todo_params)
+    current_user.todos.create(todo_params)
     redirect_to todos_path
   end
 
