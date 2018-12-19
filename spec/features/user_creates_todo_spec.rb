@@ -8,6 +8,6 @@ RSpec.feature "User creates new todo" do
     fill_in "Title", with: "Beli nasi kuning"
     click_on "Submit"
 
-    expect(page).to have_css '.todos li', text: "Beli nasi kuning"
+    expect(page).to display_todo("Beli nasi kuning")
   end
 end
