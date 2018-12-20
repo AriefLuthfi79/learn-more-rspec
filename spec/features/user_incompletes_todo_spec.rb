@@ -4,10 +4,7 @@ RSpec.feature "User incompletes todos" do
   scenario "successfully" do
     sign_in_as create(:user)
 
-    click_on "Add a new todo"
-    fill_in "Title", with: "Build something bigger"
-    click_on "Submit"
-
+    create_todo "Build something bigger"
     click_on "Mark complete"
     click_on "Mark incomplete"
 
