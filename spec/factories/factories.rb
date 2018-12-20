@@ -6,8 +6,8 @@ FactoryBot.define do
 
   end
 
-  factory :todos do
+  factory :todos, class: :Todo do
     user
-    title { "Buy milk" }
+    sequence(:title) { |n| "Buy #{n}" }
   end
 end
