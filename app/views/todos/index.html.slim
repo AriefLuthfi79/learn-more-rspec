@@ -11,3 +11,4 @@ ul.todos
         = button_to "Mark incomplete" , todo_completion_path(todo), method: :delete
       - else
         = button_to "Mark complete", todo_completion_path(todo)
+      = link_to "Delete", todo_path(todo), method: :delete
